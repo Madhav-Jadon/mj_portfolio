@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madhav Pratap Singh — Backend &amp; AI/ML Architect // Wayne Tech</title>
+  <meta name="description" content="Portfolio of Madhav Pratap Singh — B.Tech CSE student at GLA University building production backend systems, computer vision engines, and applied AI/ML architectures from Gotham City.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700;800&family=Cinzel:wght@600;700;800;900&family=Bebas+Neue&family=Orbitron:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Custom Tactical Batman Cursor -->
+<div id="bat-cursor-dot"></div>
+<div id="bat-cursor-ring"></div>
+
+<!-- Background Atmospheric Canvas (Rain, Fog, Searchlights, Lightning) -->
+<canvas id="gotham-canvas"></canvas>
+<div id="lightning-flash"></div>
+
+<!-- Cinematic Batcomputer Boot Loader -->
+<div id="bat-loader">
+  <div class="loader-emblem">
+    <svg viewBox="0 0 1000 600" style="width:100%; height:100%; fill:var(--bat-yellow);">
+      <path d="M 500 120 C 508 120 514 140 520 160 C 540 140 580 120 635 120 C 720 120 830 160 885 240 C 810 270 770 330 780 410 C 700 420 620 380 570 320 C 545 375 510 440 500 480 C 490 440 455 375 430 320 C 380 380 300 420 220 410 C 230 330 190 270 115 240 C 170 160 280 120 365 120 C 420 120 460 140 480 160 C 486 140 492 120 500 120 Z" />
+    </svg>
+  </div>
+  <div class="loader-status">
+    <span>INITIALIZING WAYNE TECH OS...</span>
+  </div>
+  <div class="loader-bar">
+    <div class="loader-bar-fill"></div>
+  </div>
+</div>
+
+<div class="canvas">
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header>
+    <nav class="nav" aria-label="Main Navigation">
+      <a href="#top" class="logo" aria-label="Madhav Pratap Singh Homepage">
+        <div class="logo-emblem-wrap">
+          <svg viewBox="0 0 1000 600">
+            <path d="M 500 120 C 508 120 514 140 520 160 C 540 140 580 120 635 120 C 720 120 830 160 885 240 C 810 270 770 330 780 410 C 700 420 620 380 570 320 C 545 375 510 440 500 480 C 490 440 455 375 430 320 C 380 380 300 420 220 410 C 230 330 190 270 115 240 C 170 160 280 120 365 120 C 420 120 460 140 480 160 C 486 140 492 120 500 120 Z" />
+          </svg>
+        </div>
+        <div class="logo-meta">
+          <span>MADHAV&nbsp;SINGH</span>
+          <span class="logo-sub">WAYNE TECH // CORE</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a href="#about"><span class="nav-idx">01</span> Dossier</a>
+        <a href="#skills"><span class="nav-idx">02</span> Utility Belt</a>
+        <a href="#works"><span class="nav-idx">03</span> Case Files</a>
+        <a href="#certificates"><span class="nav-idx">04</span> Clearances</a>
+        <a href="#more"><span class="nav-idx">05</span> Archives</a>
+        <a href="#contact"><span class="nav-idx">06</span> Signal</a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="nav-status-badge">
+          <span class="status-led"></span>
+          <span>SYS: ARMED</span>
+        </div>
+        <div class="nav-social">
+          <a href="https://github.com/Madhav-Jadon" target="_blank" rel="noopener" aria-label="GitHub Profile">GH</a>
+          <a href="https://linkedin.com/in/madhav-pratap-singh-b0a254386" target="_blank" rel="noopener" aria-label="LinkedIn Profile">IN</a>
+          <a href="mailto:madhavjadon07@gmail.com" aria-label="Send Email">✉</a>
+        </div>
+        <a href="/resume.pdf" class="nav-cta" target="_blank" rel="noopener">Resume ↗</a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-nav-links">
+      <a href="#about" class="mobile-nav-item">01 // Dossier</a>
+      <a href="#skills" class="mobile-nav-item">02 // Utility Belt</a>
+      <a href="#works" class="mobile-nav-item">03 // Case Files</a>
+      <a href="#certificates" class="mobile-nav-item">04 // Clearances</a>
+      <a href="#more" class="mobile-nav-item">05 // Archives</a>
+      <a href="#contact" class="mobile-nav-item">06 // Bat-Signal</a>
+    </div>
+    <div class="nav-social">
+      <a href="https://github.com/Madhav-Jadon" target="_blank" rel="noopener" aria-label="GitHub Profile">GH</a>
+      <a href="https://linkedin.com/in/madhav-pratap-singh-b0a254386" target="_blank" rel="noopener" aria-label="LinkedIn Profile">IN</a>
+      <a href="mailto:madhavjadon07@gmail.com" aria-label="Send Email">✉</a>
+    </div>
+    <a href="/resume.pdf" class="nav-cta" target="_blank" rel="noopener" style="display:inline-flex;">View Resume ↗</a>
+  </div>
+
+  <main id="top">
+
+    <!-- ================= HERO SECTION — BAT-SIGNAL & ROOFTOP ================= -->
+    <section class="hero">
+      
+      <!-- GIANT GLOWING BAT-SIGNAL SPOTLIGHT BEHIND HEADLINE -->
+      <div class="bat-signal-backdrop" aria-hidden="true">
+        <div class="spotlight-cone"></div>
+        <div class="bat-signal-emblem-wrap">
+          <svg class="bat-signal-svg" viewBox="0 0 1000 600">
+            <path d="M 500 120 C 508 120 514 140 520 160 C 540 140 580 120 635 120 C 720 120 830 160 885 240 C 810 270 770 330 780 410 C 700 420 620 380 570 320 C 545 375 510 440 500 480 C 490 440 455 375 430 320 C 380 380 300 420 220 410 C 230 330 190 270 115 240 C 170 160 280 120 365 120 C 420 120 460 140 480 160 C 486 140 492 120 500 120 Z" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="reveal">
+          <div class="status-beacon-wrap">
+            <span class="beacon-dot"></span>
+            <span>OPEN TO AI/ML &amp; BACKEND INTERNSHIPS</span>
+          </div>
+          <div class="eyebrow">GOTHAM CITY · CSE UNDERGRAD · GLA UNIVERSITY</div>
+          <h1 class="hero-name">BUILD.<br>DETECT.<br><span class="bat-glow">DEPLOY.</span></h1>
+          <p class="hero-role">
+            I'm Madhav — crafting high-throughput backend APIs, biometric vision engines, and dynamic database infrastructures from the shadows of Gotham.
+          </p>
+          <div class="hero-meta">
+            <span>📍 Mathura (Gotham East)</span>
+            <span>🎓 First‑Year CPI 8.92</span>
+            <span>💻 Python · Flask · OpenCV</span>
+          </div>
+          <div class="hero-cta">
+            <a href="#works" class="btn btn-primary">Investigate Cases →</a>
+            <a href="#contact" class="btn btn-ghost" id="hero-signal-trigger">Send Bat-Signal</a>
+          </div>
+          <div class="scroll-hint" style="margin-top: 50px;">
+            <span class="dot">↓</span> Descent into Batcave
+          </div>
+        </div>
+
+        <div class="hero-art reveal">
+          <!-- Floating Multi-layer Badges -->
+          <div class="floating-badge b1">
+            <div class="badge-icon icon-python">⚡</div>
+            <span>FastAPI · Flask · SQL</span>
+          </div>
+          <div class="floating-badge b2">
+            <div class="badge-icon icon-ai">👁️</div>
+            <span>InsightFace · ArcFace</span>
+          </div>
+
+          <!-- Interactive 3D Perspective Batcomputer Card -->
+          <div class="tilt-container" id="hero-tilt-card">
+            <div class="tilt-card">
+              <div class="tilt-top">
+                <div class="tilt-logo">
+                  <span class="dot"></span>
+                  <span>BATCOMPUTER // v4.2</span>
+                </div>
+                <div class="tilt-tag">ARMED</div>
+              </div>
+              <div class="tilt-content">
+                <div class="tilt-name">&gt; Madhav Pratap Singh</div>
+                <div class="tilt-headline">Architecting reliable backend APIs &amp; computer vision that ship.</div>
+              </div>
+              <div class="telemetry-grid">
+                <div class="telemetry-item">
+                  <div class="telemetry-label">System Health</div>
+                  <div class="telemetry-val val-live">ONLINE [99.9%]</div>
+                </div>
+                <div class="telemetry-item">
+                  <div class="telemetry-label">Vision Model</div>
+                  <div class="telemetry-val val-cyan">ArcFace + Retina</div>
+                </div>
+                <div class="telemetry-item">
+                  <div class="telemetry-label">API Latency</div>
+                  <div class="telemetry-val val-cyan">&lt; 38ms (Avg)</div>
+                </div>
+                <div class="telemetry-item">
+                  <div class="telemetry-label">Storage Engine</div>
+                  <div class="telemetry-val val-live">Supabase Encrypted</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GOTHAM CITY SKYLINE PARALLAX ================= -->
+    <div class="gotham-skyline-wrap" aria-hidden="true">
+      <svg class="gotham-skyline-svg" viewBox="0 0 1440 220" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="skyline-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#080a10" stop-opacity="0.9" />
+            <stop offset="100%" stop-color="#050505" stop-opacity="1" />
+          </linearGradient>
+        </defs>
+        <!-- Distant Gothic Skyline -->
+        <path fill="#06070a" opacity="0.8" d="M0 220 L0 140 L40 140 L40 110 L60 90 L80 110 L80 140 L130 140 L130 120 L160 120 L180 80 L200 120 L230 120 L230 150 L300 150 L330 100 L340 70 L350 100 L380 150 L450 150 L480 120 L520 120 L550 160 L620 160 L650 90 L670 60 L690 90 L720 160 L800 160 L830 110 L870 110 L900 150 L980 150 L1010 80 L1030 50 L1050 80 L1080 150 L1160 150 L1190 120 L1230 120 L1260 160 L1340 160 L1370 100 L1390 70 L1410 100 L1440 140 L1440 220 Z"/>
+        <!-- Foreground Wayne Towers & Spire Ledges -->
+        <path fill="url(#skyline-grad)" d="M0 220 L0 160 L70 160 L90 120 L100 80 L110 120 L140 160 L220 160 L240 130 L270 130 L290 160 L380 160 L410 90 L420 50 L430 90 L460 160 L540 160 L570 110 L610 110 L640 160 L740 160 L770 70 L785 30 L800 70 L830 160 L930 160 L960 120 L1000 120 L1030 160 L1120 160 L1150 80 L1165 40 L1180 80 L1210 160 L1300 160 L1330 110 L1370 110 L1400 160 L1440 160 L1440 220 Z"/>
+        <!-- Lit Windows (Gotham Yellow Lights) -->
+        <rect x="95" y="130" width="3" height="4" fill="#F5C518" opacity="0.8"/>
+        <rect x="102" y="130" width="3" height="4" fill="#F5C518" opacity="0.4"/>
+        <rect x="95" y="140" width="3" height="4" fill="#F5C518" opacity="0.6"/>
+        <rect x="250" y="140" width="4" height="4" fill="#F5C518" opacity="0.7"/>
+        <rect x="260" y="145" width="4" height="4" fill="#F5C518" opacity="0.5"/>
+        <rect x="415" y="100" width="3" height="5" fill="#F5C518" opacity="0.9"/>
+        <rect x="422" y="110" width="3" height="5" fill="#F5C518" opacity="0.6"/>
+        <rect x="415" y="125" width="3" height="5" fill="#F5C518" opacity="0.4"/>
+        <rect x="580" y="125" width="4" height="4" fill="#F5C518" opacity="0.7"/>
+        <rect x="775" y="90" width="3" height="6" fill="#F5C518" opacity="0.9"/>
+        <rect x="785" y="105" width="3" height="6" fill="#F5C518" opacity="0.5"/>
+        <rect x="775" y="120" width="3" height="6" fill="#F5C518" opacity="0.8"/>
+        <rect x="970" y="135" width="4" height="4" fill="#F5C518" opacity="0.6"/>
+        <rect x="1155" y="100" width="3" height="5" fill="#F5C518" opacity="0.8"/>
+        <rect x="1165" y="115" width="3" height="5" fill="#F5C518" opacity="0.5"/>
+        <rect x="1340" y="125" width="4" height="4" fill="#F5C518" opacity="0.7"/>
+        <!-- Red Aviation Warning Beacon on Wayne Tower Spire -->
+        <circle cx="785" cy="30" r="2.5" fill="#E63946">
+          <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="420" cy="50" r="2" fill="#E63946">
+          <animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="1165" cy="40" r="2" fill="#E63946">
+          <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+    </div>
+
+    <!-- ================= MISSION & ARCHITECTURE PIPELINE ================= -->
+    <section class="mission band-purple reveal">
+      <div class="container mission-grid">
+        <div class="mission-copy">
+          <div class="eyebrow">WAYNE TECH SYSTEM ARCHITECTURE</div>
+          <h2>Backend systems for real‑world problems.</h2>
+          <p>
+            From facial‑recognition attendance to database‑backed portfolios, I like taking a messy real‑world problem and turning it into a reliable API, a clean schema, and a system people actually trust.
+          </p>
+        </div>
+
+        <div class="pipeline-stack">
+          <div class="pipeline-node">
+            <div class="node-num">01</div>
+            <div class="node-info">
+              <h4>Tactical Vision Ingestion</h4>
+              <p>RetinaFace &amp; OpenCV detecting and aligning multi-subject faces from high-density group captures.</p>
+            </div>
+          </div>
+          <div class="pipeline-node">
+            <div class="node-num">02</div>
+            <div class="node-info">
+              <h4>512-D Feature Vector Extraction</h4>
+              <p>InsightFace &amp; ArcFace generating dense embeddings for robust cosine similarity matching.</p>
+            </div>
+          </div>
+          <div class="pipeline-node">
+            <div class="node-num">03</div>
+            <div class="node-info">
+              <h4>Transactional DB &amp; Export</h4>
+              <p>PostgreSQL / Supabase handling deduplication, attendance reconciliation, and live Excel/CSV streams.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION — BATCAVE DOSSIER ================= -->
+    <section id="about" class="band-cream">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="section-head" style="margin-bottom: 24px;">
+            <div class="eyebrow">BATCAVE PERSONNEL ARCHIVE</div>
+            <h2>Studying systems.<br>Shipping the ones that matter.</h2>
+          </div>
+          <div class="about-copy">
+            <p>
+              I'm a Computer Science undergraduate at GLA University, Mathura, currently in my second year with a first‑year CPI of 8.92. My work sits at the intersection of backend engineering and applied AI/ML — I like building software that reasons about the real world, then wiring it into APIs people can actually use.
+            </p>
+            <p>
+              My flagship project, a Smart Attendance System, identifies multiple students from a single group photograph using InsightFace, ArcFace and RetinaFace, then reconciles the result against a registered student database with duplicate handling and CSV/Excel export. I'm also building an AI resume‑to‑portfolio generator — the same kind of dynamic, database‑backed system that powers this very site.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="stat-grid">
+            <div class="stat-card">
+              <div class="stat-num counter" data-target="8.92" data-decimals="2">0.00</div>
+              <div class="stat-label">First‑Year CPI</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num counter" data-target="86.2" data-decimals="1" data-suffix="%">0.0%</div>
+              <div class="stat-label">Class XII</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num counter" data-target="92.6" data-decimals="1" data-suffix="%">0.0%</div>
+              <div class="stat-label">Class X</div>
+            </div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-head">
+              <div class="stat-label" style="margin-top:0;">WAYNE TECH CREDENTIALS</div>
+              <span class="edu-tag">2ND YEAR · 3RD SEM</span>
+            </div>
+            <h3 style="font-size: 1.15rem; color: #ffffff;">B.Tech in Computer Science &amp; Engineering</h3>
+            <p style="color: var(--text-secondary); font-size: 0.92rem; margin-top: 4px;">
+              GLA University, Mathura — CPI: 8.92
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOCUS AREAS / STACK — WAYNE TECH UTILITY BELT ================= -->
+    <section id="skills" class="band-purple reveal">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">WAYNE TECH UTILITY BELT // ARSENAL</div>
+          <h2>Where I focus</h2>
+          <p>Modular weaponized frameworks and toolchains deployed for high-reliability systems.</p>
+        </div>
+
+        <div class="focus-grid" id="focus-grid" aria-live="polite">
+          <!-- Filled dynamically by JavaScript -->
+        </div>
+
+        <div class="carousel-controls">
+          <div class="carousel-pages" id="carousel-pages">01 . 02</div>
+          <div class="carousel-arrows">
+            <button class="arrow-btn" id="prev-focus" aria-label="Previous Slide">←</button>
+            <button class="arrow-btn" id="next-focus" aria-label="Next Slide">→</button>
+          </div>
+          <a href="#contact" class="carousel-contact">Call the Bat →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS — WAYNE TECH CASE FILES ================= -->
+    <section id="works" class="band-cream">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">WAYNE ENTERPRISES ARCHIVES // CASE FILES</div>
+          <h2>Active Investigations</h2>
+          <p>Pulled live from Supabase — add a row to the <code>projects</code> database and it is synchronized automatically.</p>
+        </div>
+        <div class="filter-row" id="project-filters" role="tablist" aria-label="Filter projects by technology">
+          <button class="filter-btn active" data-filter="all">All Cases</button>
+        </div>
+        <div class="project-grid" id="project-grid">
+          <div class="skeleton"></div>
+          <div class="skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CERTIFICATES — WAYNE TECH CLEARANCES ================= -->
+    <section id="certificates" class="band-cream-2">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">SECURITY CLEARANCES</div>
+          <h2>Verified Credentials</h2>
+          <p>Encrypted PDF credentials stored in Supabase Storage and verified dynamically from the <code>certificates</code> database.</p>
+        </div>
+                <div class="cert-grid" id="cert-grid">
+          <!-- 01: Microsoft Azure AZ-900 -->
+          <article class="cert-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="cert-icon">PDF</div>
+              <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--bat-yellow); letter-spacing:0.08em; background:rgba(245,197,24,0.1); padding:3px 8px; border:1px solid var(--border-bat); border-radius:var(--radius-sm);">VERIFIED</span>
+            </div>
+            <div>
+              <h3 class="cert-name">Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
+              <div class="cert-issuer">Microsoft / Certiport</div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:6px;">
+                <div class="cert-date">May 18, 2026</div>
+                <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);">Verification ID: yz9W-uTbU</div>
+              </div>
+            </div>
+            <a class="cert-view" href="certificates/microsoft-azure-fundamentals-az900.pdf" target="_blank" rel="noopener">↗ View Credential (PDF)</a>
+          </article>
+
+          <!-- 02: IIT Roorkee Productathon -->
+          <article class="cert-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="cert-icon">PDF</div>
+              <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--bat-yellow); letter-spacing:0.08em; background:rgba(245,197,24,0.1); padding:3px 8px; border:1px solid var(--border-bat); border-radius:var(--radius-sm);">VERIFIED</span>
+            </div>
+            <div>
+              <h3 class="cert-name">National Finalist in PRODUCTATHON</h3>
+              <div class="cert-issuer">E-Cell, IIT Roorkee (E-Summit '26)</div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:6px;">
+                <div class="cert-date">February 2026</div>
+                <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);">E-Summit '26 Finalist</div>
+              </div>
+            </div>
+            <a class="cert-view" href="certificates/iit-roorkee-productathon-finalist.pdf" target="_blank" rel="noopener">↗ View Credential (PDF)</a>
+          </article>
+
+          <!-- 03: NSUT Innovision'25 -->
+          <article class="cert-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="cert-icon">PDF</div>
+              <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--bat-yellow); letter-spacing:0.08em; background:rgba(245,197,24,0.1); padding:3px 8px; border:1px solid var(--border-bat); border-radius:var(--radius-sm);">VERIFIED</span>
+            </div>
+            <div>
+              <h3 class="cert-name">One Shot, One Line — INNOVISION'25</h3>
+              <div class="cert-issuer">Netaji Subhas University of Technology (NSUT)</div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:6px;">
+                <div class="cert-date">November 2025</div>
+                <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);">ID: cmi4pfoxt000wken0sufa2t31</div>
+              </div>
+            </div>
+            <a class="cert-view" href="certificates/innovision-nsut-one-shot-one-line.pdf" target="_blank" rel="noopener">↗ View Credential (PDF)</a>
+          </article>
+
+          <!-- 04: Intel Unnati AI Python -->
+          <article class="cert-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="cert-icon">PDF</div>
+              <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--bat-yellow); letter-spacing:0.08em; background:rgba(245,197,24,0.1); padding:3px 8px; border:1px solid var(--border-bat); border-radius:var(--radius-sm);">VERIFIED</span>
+            </div>
+            <div>
+              <h3 class="cert-name">AI Algorithm Development with Python</h3>
+              <div class="cert-issuer">Intel® Unnati Lab / Edulateral Foundation</div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:6px;">
+                <div class="cert-date">October 2025</div>
+                <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);">Workshop Completion</div>
+              </div>
+            </div>
+            <a class="cert-view" href="certificates/intel-unnati-ai-python-workshop.pdf" target="_blank" rel="noopener">↗ View Credential (PDF)</a>
+          </article>
+
+          <!-- 05: NEC AI Mastery -->
+          <article class="cert-card">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <div class="cert-icon">PDF</div>
+              <span style="font-family:var(--font-mono); font-size:0.68rem; color:var(--bat-yellow); letter-spacing:0.08em; background:rgba(245,197,24,0.1); padding:3px 8px; border:1px solid var(--border-bat); border-radius:var(--radius-sm);">VERIFIED</span>
+            </div>
+            <div>
+              <h3 class="cert-name">AI Mastery: Unlocking the Power of AI</h3>
+              <div class="cert-issuer">NEC Corporation India & Edulateral Foundation</div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:6px;">
+                <div class="cert-date">October 2025</div>
+                <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);">Certificate No: NEC1228</div>
+              </div>
+            </div>
+            <a class="cert-view" href="certificates/nec-ai-mastery-certificate.pdf" target="_blank" rel="noopener">↗ View Credential (PDF)</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COURSEWORK + SOFT SKILLS — GOTHAM INTEL ================= -->
+    <section id="more" class="band-cream reveal">
+      <div class="container split-row">
+        <div>
+          <div class="section-head" style="margin-bottom: 24px;">
+            <div class="eyebrow">DETECTIVE FOUNDATIONS</div>
+            <h2 style="font-size: 1.8rem;">Relevant Coursework</h2>
+          </div>
+          <ol class="numbered">
+            <li><span class="n">01</span> Data Structures &amp; Algorithms</li>
+            <li><span class="n">02</span> Database Management Systems</li>
+            <li><span class="n">03</span> Operating Systems</li>
+            <li><span class="n">04</span> Computer Networks</li>
+            <li><span class="n">05</span> Artificial Intelligence &amp; Data Analytics</li>
+            <li><span class="n">06</span> Digital Logic Design</li>
+            <li><span class="n">07</span> Object‑Oriented Programming</li>
+            <li><span class="n">08</span> Web Development</li>
+          </ol>
+        </div>
+        <div>
+          <div class="section-head" style="margin-bottom: 24px;">
+            <div class="eyebrow">TACTICAL ATTRIBUTES</div>
+            <h2 style="font-size: 1.8rem;">Soft Skills</h2>
+          </div>
+          <div class="pill-list">
+            <span class="pill">Problem Solving</span>
+            <span class="pill">Team Collaboration</span>
+            <span class="pill">Technical Communication</span>
+            <span class="pill">Fast Learning</span>
+            <span class="pill">Project Development</span>
+            <span class="pill">Analytical Thinking</span>
+            <span class="pill">API &amp; Schema Design</span>
+            <span class="pill">System Optimization</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT — SEND A SIGNAL ================= -->
+    <section id="contact" class="band-red">
+      <div class="container contact-wrap">
+        <div>
+          <div class="eyebrow">EMERGENCY PROTOCOL // SEND THE SIGNAL</div>
+          <h2 class="contact-title">Open to backend, AI/ML and full‑stack <span>engineering missions.</span></h2>
+        </div>
+        <div class="contact-links">
+          <button class="contact-card" id="copy-email-btn" data-email="madhavjadon07@gmail.com" title="Click to copy email">
+            <span>✉</span>
+            <span>madhavjadon07@gmail.com</span>
+            <small style="margin-left:auto; font-size:0.75rem; color:var(--bat-yellow);">(Copy Encrypted)</small>
+          </button>
+          <a href="https://github.com/Madhav-Jadon" target="_blank" rel="noopener" class="contact-card">
+            <span>↗</span>
+            <span>github.com/Madhav-Jadon</span>
+          </a>
+          <a href="https://linkedin.com/in/madhav-pratap-singh-b0a254386" target="_blank" rel="noopener" class="contact-card">
+            <span>↗</span>
+            <span>linkedin.com/in/madhav-pratap-singh</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <span>© 2026 Madhav Pratap Singh · Wayne Tech Core // Supabase + Vanilla JS</span>
+    <div class="footer-time">
+      <span class="clock-dot"></span>
+      <span>Gotham East (Mathura, IN) · <span id="live-time">--:--:-- IST</span></span>
+    </div>
+    <a href="#top" class="back-to-top" id="back-to-top">Return to Rooftop ↑</a>
+  </footer>
+
+</div><!-- /.canvas -->
+
+<div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+
+<script type="module" src="config.js"></script>
+<script type="module" src="app.js"></script>
+</body>
+</html>
